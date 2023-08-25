@@ -1,21 +1,14 @@
-//ASSIGNMENT 1
-//CHANGE BACKGROUND COLOR
-function getRandomColor()
-{
-    let l='0123456789ABCDEF';
-    let col='#';
-    for(var i=0;i<6;i++)
-    {
-        col+=l[Math.floor(Math.random()*16)];
-
-    }
-    return col;
+const names=["Aarav","Sanya","Vikram","Neha","Rohan","Priya","Amit","Meera","Rajiv","Ananya"];
+let curindex=0;
+let displayNames=document.getElementById('nameDisplay');
+//let nextName=document.getElementById('btn1');
+//let previousName=document.getElementById('btn2');
+displayNames.innerText=names[curindex];
+next=()=>{
+    curindex=(curindex+1)%names.length;
+    displayNames.innerText=names[curindex];
 }
-function changeBackgroundColor()
-{
-    const newcolor=getRandomColor();
-    document.body.style.backgroundColor=newcolor;
-
+previous=()=>{
+    curindex=(curindex-1)%names.length;
+    displayNames.innerText=names[curindex];
 }
-document .onclick=changeBackgroundColor;
-
